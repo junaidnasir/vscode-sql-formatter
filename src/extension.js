@@ -30,7 +30,6 @@ const fullDocumentRange = (document) => {
 };
 
 module.exports.activate = function (context) {
-	vscode.window.showInformationMessage('debug print1');
 	let disposable = vscode.commands.registerTextEditorCommand('extension.formatSQL', (editor, edit) => {
 		let text = editor.document.getText(editor.selection);
 		editor.edit(builder => {
@@ -47,7 +46,6 @@ module.exports.activate = function (context) {
 				editor.selection = new vscode.Selection(startPos, startPos);
 			}
 		});
-		vscode.window.showInformationMessage('debug print');
 	});
 	context.subscriptions.push(disposable);
 
